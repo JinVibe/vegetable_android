@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="안녕하세요,\n00에 처음 방문하셨나요?"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewSubGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewGreeting"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="빠른 소셜 회원가입이 가능해요."
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/buttonCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewSubGreeting"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="계정 만들기"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textViewOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonCreateAccount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="또는"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/buttonGoogleSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewOr"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/white"
+        android:drawableStart="@raw/ic_google"
+        android:text="Google로 시작하기"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/buttonKakaoSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonGoogleSignIn"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:drawableStart="@raw/ic_kakao"
+        android:text="카카오로 시작하기"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonKakaoSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="이미 00 계정이 있다면 로그인"
+        android:textColor="@android:color/holo_green_dark" />
+
+</RelativeLayout>
+

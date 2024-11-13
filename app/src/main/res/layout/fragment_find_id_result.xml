@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewFoundId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="찾으시는 아이디는"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewIdValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewFoundId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="abcd1234"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewLoginPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewIdValue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="이 아이디로 로그인해보세요."
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewLoginPrompt"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="로그인하기"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
+
