@@ -41,10 +41,6 @@
             android:progressDrawable="@drawable/circular_progress"
             android:rotation="-90" />
 
-
-
-
-
     </FrameLayout>
 
     <TextView

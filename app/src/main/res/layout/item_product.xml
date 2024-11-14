@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/round_background"
+    android:layout_marginStart="4dp">
+
+    <FrameLayout
+        android:id="@+id/image_and_progress"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp">
+
+        <!-- 둥근 이미지 -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/test"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircularImage"
+            app:strokeColor="@color/white"
+            app:strokeWidth="11dp"/>
+
+        <!-- 원형 ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="75"
+            android:progressDrawable="@drawable/circular_progress"
+            android:rotation="-90" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="감자"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/image_and_progress"
+        app:layout_constraintTop_toTopOf="@id/image_and_progress"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:id="@+id/percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="72%"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/product_name"
+        app:layout_constraintTop_toTopOf="@id/product_name"
+        android:layout_marginStart="4dp"
+        android:textColor="#15C444"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/product_name"
+        android:layout_marginEnd="39dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/collectedAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#111111"
+        app:layout_constraintStart_toStartOf="@id/product_name"
+        app:layout_constraintTop_toBottomOf="@id/product_name"
+        android:layout_marginTop="2dp"
+        android:text="7.2"
+        />
+
+    <TextView
+        android:id="@+id/targetAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#828387"
+        app:layout_constraintStart_toEndOf="@id/collectedAmount"
+        app:layout_constraintTop_toTopOf="@id/collectedAmount"
+        android:text=" / 10kg"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

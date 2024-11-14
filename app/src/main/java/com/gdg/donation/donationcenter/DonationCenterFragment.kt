@@ -36,6 +36,7 @@ class DonationCenterFragment : Fragment() {
         }
     }
 
+    ///////////////////////////// 펀딩 리스트 관련 클래스 //////////////////////////
     private inner class DCFundingHolder(private val binding : ItemDcFundingBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(dcFunding : DCFunding) {
             if (dcFunding.image.isNullOrBlank()) {
@@ -80,4 +81,5 @@ class DonationCenterFragment : Fragment() {
         }
 
     }
+    ///////////////////////////////////////////////////////////////////////////////////////
 }

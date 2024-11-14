@@ -1,6 +1,7 @@
 package com.gdg.donation
 
 import com.gdg.donation.donationcenter.DCFunding
+import com.gdg.donation.donationcenter.Product
 
 val dummyDCFundingList : List<DCFunding> = listOf(
     DCFunding(
@@ -67,5 +68,32 @@ val dummyDCFundingList : List<DCFunding> = listOf(
         product_3 = "손난로",
         deadline_alarm = "마감 임박",
         deadline_dday = "D-1"
+    )
+)
+
+val dummyImageUrlList = listOf(
+    "",
+    "",
+    "",
+)
+
+val dummyProductList = listOf(
+    Product(
+        image = "",
+        targetAmount = 10,
+        collectedAmount = 7,
+        name = "Potato"
+    ),
+    Product(
+        image = "",
+        targetAmount = 15,
+        collectedAmount = 10,
+        name = "Carrot"
+    ),
+    Product(
+        image = "",
+        targetAmount = 20,
+        collectedAmount = 5,
+        name = "Onion"
     )
 )
