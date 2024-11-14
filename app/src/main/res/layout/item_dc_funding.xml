@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="92dp"
+    android:layout_marginTop="6dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+
+    <FrameLayout
+        android:id="@+id/image_and_progress"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 둥근 이미지 -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/test"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircularImage"
+            app:strokeColor="@color/white"
+            app:strokeWidth="11dp"/>
+
+        <!-- 원형 ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="75"
+            android:progressDrawable="@drawable/circular_progress"
+            android:rotation="-90" />
+
+
+
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="카레 재료 모으기 프로젝트"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/image_and_progress"
+        app:layout_constraintTop_toTopOf="@+id/image_and_progress" />
+
+    <TextView
+        android:id="@+id/percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="68%"
+        android:textSize="14sp"
+        android:textColor="#15C444"
+        app:layout_constraintStart_toEndOf="@id/title"
+        app:layout_constraintTop_toTopOf="@id/title" />
+
+
+    <TextView
+        android:id="@+id/writer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="그린아동센터"
+        android:textColor="#828387"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <ImageView
+        android:id="@+id/dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:src="@drawable/dot"
+        app:layout_constraintBottom_toBottomOf="@id/writer"
+        app:layout_constraintStart_toEndOf="@id/writer"
+        app:layout_constraintTop_toTopOf="@id/writer" />
+
+    <TextView
+        android:id="@+id/dc_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아동센터"
+        android:textColor="#828387"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/dot"
+        app:layout_constraintStart_toEndOf="@id/dot"
+        app:layout_constraintTop_toTopOf="@id/dot" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/writer"
+        app:layout_constraintTop_toBottomOf="@id/writer">
+
+        <TextView
+            android:id="@+id/product_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="#E9FFEF"
+            android:paddingStart="7dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="3dp"
+            android:text="감자"
+            android:textColor="#15C444"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/product_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="#E9FFEF"
+            android:paddingStart="7dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="3dp"
+            android:text="당근"
+            android:textColor="#15C444"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/product_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="#E9FFEF"
+            android:paddingStart="7dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="3dp"
+            android:text="양파"
+            android:textColor="#15C444"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/deadline_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="#FFF4F3"
+            android:paddingStart="7dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="3dp"
+            android:text="마감임박"
+            android:textColor="#EA4335"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/deadline_dday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="#F4F4F5"
+            android:paddingStart="7dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="3dp"
+            android:text="D-1"
+            android:textColor="#696A6F"
+            android:textSize="11sp" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

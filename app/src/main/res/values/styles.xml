@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ShapeableImageView를 원형으로 만들기 위한 스타일 -->
+    <style name="CircularImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- 50%로 설정하여 원형으로 -->
+    </style>
+</resources>

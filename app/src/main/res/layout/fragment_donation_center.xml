@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/white">
 
@@ -26,7 +27,7 @@
             />
         
         <ImageView
-            android:id="@+id/add_donation_center"
+            android:id="@+id/dc_funding_add_button"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:src="@drawable/add_button"
@@ -74,12 +75,13 @@
     </LinearLayout>
     
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/donation_list_recycler"
+        android:id="@+id/dc_funding_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="6dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
+        android:layout_marginEnd="20dp"
+        tools:listitem="@layout/item_dc_funding"/>
 
 
 </LinearLayout>
