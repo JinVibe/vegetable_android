@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="펀딩"
+            android:textSize="24sp"
+            android:textColor="#0F0F10"
+            app:layout_constraintStart_toStartOf="@id/app_bar"
+            app:layout_constraintTop_toTopOf="@id/app_bar"
+            app:layout_constraintBottom_toBottomOf="@id/app_bar"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            />
+        
+        <ImageView
+            android:id="@+id/add_donation_center"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/add_button"
+            app:layout_constraintTop_toTopOf="@id/app_bar"
+            app:layout_constraintEnd_toEndOf="@id/app_bar"
+            app:layout_constraintBottom_toBottomOf="@id/app_bar"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <LinearLayout
+        android:id="@+id/filter_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingStart="20dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/filter_button"
+            android:layout_width="70dp"
+            android:layout_height="32dp"
+            android:src="@drawable/filter_button"/>
+
+        <Spinner
+            android:layout_width="64dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="6dp"/>
+
+        <Spinner
+            android:layout_width="64dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="6dp"/>
+
+        <Spinner
+            android:layout_width="64dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="6dp"/>
+        
+
+    </LinearLayout>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/donation_list_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+
+</LinearLayout>
