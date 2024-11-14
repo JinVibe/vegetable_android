@@ -26,6 +26,8 @@
             android:name=".ContentActivity"
             android:exported="true">
         </activity>
+
+        <activity android:name=".donationcenter.DCFundingDetailActivity" />
     </application>
 
 </manifest>

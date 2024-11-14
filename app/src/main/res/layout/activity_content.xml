@@ -22,6 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu_bottom_nav"
         app:labelVisibilityMode="labeled"
+        android:background="@color/white"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

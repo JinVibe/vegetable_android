@@ -1,6 +1,6 @@
 package com.gdg.donation.donationcenter
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,7 +46,6 @@ class DonationCenterFragment : Fragment() {
                     .circleCrop() // 원형으로 자르기
                     .into(binding.image) // 이미지
             }
-
             val progressPercentage = (dcFunding.collectedAmount.toFloat() / dcFunding.targetAmount * 100).toInt()
             binding.progress.progress = progressPercentage
             binding.title.text = dcFunding.title // 제목
@@ -58,6 +57,10 @@ class DonationCenterFragment : Fragment() {
             binding.product3.text = dcFunding.product_3 // 당근
             binding.deadlineAlarm.text = dcFunding.deadline_alarm // 데드라인 알람
             binding.deadlineDday.text = dcFunding.deadline_dday // 데드라인 디데이
+
+            binding.root.setOnClickListener {
+                startActivity(Intent(requireContext(), DCFundingDetailActivity::class.java))
+            }
         }
     }
 

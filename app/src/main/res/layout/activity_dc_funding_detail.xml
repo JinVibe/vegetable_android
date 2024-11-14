@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/imagePager"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_button" />
+
+        <TextView
+            android:id="@+id/writer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18.5dp"
+            android:text="그린아동센터"
+            android:textColor="#828387"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagePager" />
+
+        <ImageView
+            android:id="@+id/dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:src="@drawable/dot"
+            app:layout_constraintBottom_toBottomOf="@id/writer"
+            app:layout_constraintStart_toEndOf="@id/writer"
+            app:layout_constraintTop_toTopOf="@id/writer" />
+
+        <TextView
+            android:id="@+id/dc_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아동센터"
+            android:textColor="#828387"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/dot"
+            app:layout_constraintStart_toEndOf="@id/dot"
+            app:layout_constraintTop_toTopOf="@id/dot" />
+
+        <TextView
+            android:id="@+id/deadline_dday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="#F4F4F5"
+            android:paddingStart="7dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="3dp"
+            android:text="D-1"
+            android:textColor="#696A6F"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/dc_tag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dc_tag" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6.5dp"
+            android:text="카레 재료 모으기 프로젝트"
+            android:textColor="#111111"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/writer"
+            app:layout_constraintTop_toBottomOf="@id/writer" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="그린 아동센터에서 11/27일 지역 아동 축제에서 참여 아동들에게 카레를 제공하기 위해 감자, 당근 등 조리에 필요한 재료들을 펀딩 요청합니다. ^^"
+            android:textColor="#828387"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/deadline_dday"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="68%"
+            android:textColor="#15C444"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/text"
+            app:layout_constraintTop_toBottomOf="@id/text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="달성"
+            android:textColor="#15C444"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/percent"
+            app:layout_constraintStart_toEndOf="@id/percent" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="#E8E8EE"
+            app:layout_constraintEnd_toEndOf="@id/text"
+            app:layout_constraintStart_toStartOf="@id/percent"
+            app:layout_constraintTop_toBottomOf="@id/percent" />
+
+        <TextView
+            android:id="@+id/products"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="필요 농산물"
+            android:textColor="#111111"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/line"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/products_list"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/line"
+            app:layout_constraintStart_toStartOf="@id/products"
+            app:layout_constraintTop_toBottomOf="@id/products"
+            />
+
+        <Button
+            android:id="@+id/donation_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:text="기부하기"
+            app:layout_constraintTop_toBottomOf="@id/products_list"
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/products_list"
+            app:layout_constraintStart_toStartOf="@id/products_list"
+            android:backgroundTint="#15C444"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
