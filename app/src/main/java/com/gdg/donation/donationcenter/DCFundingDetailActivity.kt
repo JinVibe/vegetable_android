@@ -10,10 +10,10 @@ import com.bumptech.glide.Glide
 import com.gdg.donation.R
 import com.gdg.donation.databinding.ActivityDcFundingDetailBinding
 import com.gdg.donation.databinding.ItemImagePagerBinding
-import com.gdg.donation.databinding.ItemProductBinding
-import com.gdg.donation.donationcenter.data.Product
+import com.gdg.donation.databinding.ItemProductNeedBinding
+import com.gdg.donation.donationcenter.data.ProductNeed
 import com.gdg.donation.dummyImageUrlList
-import com.gdg.donation.dummyProductList
+import com.gdg.donation.dummyProductNeedList
 
 class DCFundingDetailActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDcFundingDetailBinding
@@ -29,7 +29,7 @@ class DCFundingDetailActivity : AppCompatActivity() {
         // 필요 농산물 리사이클러뷰
         binding.productsList.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            adapter = ProductAdapter(dummyProductList)
+            adapter = ProductNeedAdapter(dummyProductNeedList)
         }
 
         // 기부하기 버튼 클릭 리스너
@@ -69,38 +69,38 @@ class DCFundingDetailActivity : AppCompatActivity() {
     //////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////// 리사이클러뷰(필요 농산물) 관련 클래스 ////////////////////////
-    inner class ProductHolder(private val binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(product: Product) {
-            val progressPercentage = (product.collectedAmount.toFloat() / product.targetAmount * 100).toInt() // 프로그래스 계산
+    inner class ProductNeedHolder(private val binding: ItemProductNeedBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(productNeed: ProductNeed) {
+            val progressPercentage = (productNeed.collectedAmount.toFloat() / productNeed.targetAmount * 100).toInt() // 프로그래스 계산
 
-            if (product.image.isNullOrBlank()) { // 이미지
+            if (productNeed.image.isNullOrBlank()) { // 이미지
                 binding.image.setImageResource(R.drawable.test)
             } else {
                 Glide.with(binding.image.context)
-                    .load(product.image)
+                    .load(productNeed.image)
                     .circleCrop() // 원형으로 자르기
                     .into(binding.image) // 이미지
             }
             binding.progress.progress = progressPercentage // 프로그래스
             binding.percent.text = "${progressPercentage}%" // 퍼센트(숫자)
-            binding.collectedAmount.text = product.collectedAmount.toString() // 현재까지 모은 양
-            binding.targetAmount.text = "/ ${product.targetAmount.toString()}kg" // 목표량
+            binding.collectedAmount.text = productNeed.collectedAmount.toString() // 현재까지 모은 양
+            binding.targetAmount.text = "/ ${productNeed.targetAmount.toString()}kg" // 목표량
         }
     }
 
 
-    private inner class ProductAdapter(private val productList: List<Product>) : RecyclerView.Adapter<ProductHolder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHolder {
-            val binding = ItemProductBinding.inflate(layoutInflater, parent, false)
-            return ProductHolder(binding)
+    private inner class ProductNeedAdapter(private val productNeedList: List<ProductNeed>) : RecyclerView.Adapter<ProductNeedHolder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductNeedHolder {
+            val binding = ItemProductNeedBinding.inflate(layoutInflater, parent, false)
+            return ProductNeedHolder(binding)
         }
 
         override fun getItemCount(): Int {
-            return productList.size
+            return productNeedList.size
         }
 
-        override fun onBindViewHolder(holder: ProductHolder, position: Int) {
-            holder.bind(productList[position])
+        override fun onBindViewHolder(holder: ProductNeedHolder, position: Int) {
+            holder.bind(productNeedList[position])
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////
