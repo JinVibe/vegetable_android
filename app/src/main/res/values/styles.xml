@@ -5,4 +5,8 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item> <!-- 50%로 설정하여 원형으로 -->
     </style>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemRippleColor">@android:color/transparent</item>
+    </style>
 </resources>
