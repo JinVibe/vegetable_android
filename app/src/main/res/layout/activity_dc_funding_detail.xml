@@ -92,6 +92,7 @@
             android:text="카레 재료 모으기 프로젝트"
             android:textColor="#111111"
             android:textStyle="bold"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/writer"
             app:layout_constraintTop_toBottomOf="@id/writer" />
 
@@ -112,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="68%"
+            android:text="70%"
             android:textColor="#15C444"
             android:textSize="22sp"
             android:textStyle="bold"

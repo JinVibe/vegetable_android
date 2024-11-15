@@ -14,6 +14,11 @@ class DonationCompleteActivity : AppCompatActivity() {
         binding = ActivityDonationCompleteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 닫기
+        binding.closeButton.setOnClickListener {
+            finish()
+        }
+
         binding.completeButton.setOnClickListener {
             finish()
         }

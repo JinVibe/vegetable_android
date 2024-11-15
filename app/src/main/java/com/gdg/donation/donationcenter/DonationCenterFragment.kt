@@ -44,51 +44,51 @@ class DonationCenterFragment : Fragment() {
     }
 
     ///////////////////////////// 펀딩 리스트 관련 클래스 //////////////////////////
-    private inner class DCFundingHolder(private val binding : ItemDcFundingBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(dcFunding : DCFunding) {
-            val progressPercentage = (dcFunding.collectedAmount.toFloat() / dcFunding.targetAmount * 100).toInt() // 프로그래스 계산
-
-            if (dcFunding.image.isNullOrBlank()) { // 이미지
-                binding.image.setImageResource(R.drawable.test)
-            } else {
-                Glide.with(requireContext())
-                    .load(dcFunding.image)
-                    .circleCrop() // 원형으로 자르기
-                    .into(binding.image) // 이미지
-            }
-            binding.progress.progress = progressPercentage // 프로그래스바
-            binding.title.text = dcFunding.title // 제목
-            binding.percent.text = "${progressPercentage}%" // 퍼센트(숫자)
-            binding.writer.text = dcFunding.writer // 작성자
-            binding.dcTag.text = dcFunding.dc_tag // 기부처 태그
-            binding.product1.text = dcFunding.product_1 // 감자
-            binding.product2.text = dcFunding.product_2 // 양파
-            binding.product3.text = dcFunding.product_3 // 당근
-            binding.deadlineAlarm.text = dcFunding.deadline_alarm // 데드라인 알람
-            binding.deadlineDday.text = dcFunding.deadline_dday // 데드라인 디데이
-
-            // 리스트 아이템 클릭 리스너
-            binding.root.setOnClickListener {
-                startActivity(Intent(requireContext(), DCFundingDetailActivity::class.java)) // 펀딩 상세화면으로 이동
-            }
-        }
-    }
-
-    private inner class DCFundingAdapter(private val dcFundingList : List<DCFunding>) : RecyclerView.Adapter<DCFundingHolder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DCFundingHolder {
-            val binding = ItemDcFundingBinding.inflate(layoutInflater,parent,false)
-
-            return DCFundingHolder(binding)
-        }
-
-        override fun getItemCount(): Int {
-            return dcFundingList.size
-        }
-
-        override fun onBindViewHolder(holder: DCFundingHolder, position: Int) {
-            holder.bind(dcFundingList[position])
-        }
-
-    }
+//    inner class DCFundingHolder(private val binding : ItemDcFundingBinding) : RecyclerView.ViewHolder(binding.root) {
+//        fun bind(dcFunding : DCFunding) {
+//            val progressPercentage = (dcFunding.collectedAmount.toFloat() / dcFunding.targetAmount * 100).toInt() // 프로그래스 계산
+//
+//            if (dcFunding.image.isNullOrBlank()) { // 이미지
+//                binding.image.setImageResource(R.drawable.test)
+//            } else {
+//                Glide.with(requireContext())
+//                    .load(dcFunding.image)
+//                    .circleCrop() // 원형으로 자르기
+//                    .into(binding.image) // 이미지
+//            }
+//            binding.progress.progress = progressPercentage // 프로그래스바
+//            binding.title.text = dcFunding.title // 제목
+//            binding.percent.text = "${progressPercentage}%" // 퍼센트(숫자)
+//            binding.writer.text = dcFunding.writer // 작성자
+//            binding.dcTag.text = dcFunding.dc_tag // 기부처 태그
+//            binding.product1.text = dcFunding.product_1 // 감자
+//            binding.product2.text = dcFunding.product_2 // 양파
+//            binding.product3.text = dcFunding.product_3 // 당근
+//            binding.deadlineAlarm.text = dcFunding.deadline_alarm // 데드라인 알람
+//            binding.deadlineDday.text = dcFunding.deadline_dday // 데드라인 디데이
+//
+//            // 리스트 아이템 클릭 리스너
+//            binding.root.setOnClickListener {
+//                startActivity(Intent(requireContext(), DCFundingDetailActivity::class.java)) // 펀딩 상세화면으로 이동
+//            }
+//        }
+//    }
+//
+//    inner class DCFundingAdapter(private val dcFundingList : List<DCFunding>) : RecyclerView.Adapter<DCFundingHolder>() {
+//        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DCFundingHolder {
+//            val binding = ItemDcFundingBinding.inflate(layoutInflater,parent,false)
+//
+//            return DCFundingHolder(binding)
+//        }
+//
+//        override fun getItemCount(): Int {
+//            return dcFundingList.size
+//        }
+//
+//        override fun onBindViewHolder(holder: DCFundingHolder, position: Int) {
+//            holder.bind(dcFundingList[position])
+//        }
+//
+//    }
     ///////////////////////////////////////////////////////////////////////////////////////
 }
