@@ -32,6 +32,8 @@
         <activity android:name=".donationcenter.DCFundingDetailActivity" />
 
         <activity android:name=".donationcenter.DCFundingCreateActivity" />
+
+        <activity android:name=".donationcenter.DCFundingDonationActivity" />
     </application>
 
 </manifest>

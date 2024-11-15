@@ -1,5 +1,6 @@
 package com.gdg.donation.donationcenter
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -30,13 +31,18 @@ class DCFundingDetailActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = ProductAdapter(dummyProductList)
         }
+
+        // 기부하기 버튼 클릭 리스너
+        binding.donationButton.setOnClickListener {
+            startActivity(Intent(this, DCFundingDonationActivity::class.java))
+        }
     }
 
 
     ////////////////////////////// 뷰페이저(이미지 스와이프) 관련 클래스 ////////////////////////
     private inner class ImagePagerHolder(private val binding : ItemImagePagerBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(imageUrl : String) {
-            if (imageUrl.isNullOrBlank()) {
+            if (imageUrl.isNullOrBlank()) { // 이미지
                 binding.image.setImageResource(R.drawable.test)
             } else {
                 Glide.with(binding.image.context).load(imageUrl).into(binding.image)
@@ -65,7 +71,9 @@ class DCFundingDetailActivity : AppCompatActivity() {
     ////////////////////////////// 리사이클러뷰(필요 농산물) 관련 클래스 ////////////////////////
     inner class ProductHolder(private val binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
-            if (product.image.isNullOrBlank()) {
+            val progressPercentage = (product.collectedAmount.toFloat() / product.targetAmount * 100).toInt() // 프로그래스 계산
+
+            if (product.image.isNullOrBlank()) { // 이미지
                 binding.image.setImageResource(R.drawable.test)
             } else {
                 Glide.with(binding.image.context)
@@ -73,12 +81,10 @@ class DCFundingDetailActivity : AppCompatActivity() {
                     .circleCrop() // 원형으로 자르기
                     .into(binding.image) // 이미지
             }
-
-            val progressPercentage = (product.collectedAmount.toFloat() / product.targetAmount * 100).toInt()
-            binding.progress.progress = progressPercentage
+            binding.progress.progress = progressPercentage // 프로그래스
             binding.percent.text = "${progressPercentage}%" // 퍼센트(숫자)
-            binding.collectedAmount.text = product.collectedAmount.toString()
-            binding.targetAmount.text = "/ ${product.targetAmount.toString()}kg"
+            binding.collectedAmount.text = product.collectedAmount.toString() // 현재까지 모은 양
+            binding.targetAmount.text = "/ ${product.targetAmount.toString()}kg" // 목표량
         }
     }
 

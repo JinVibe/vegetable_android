@@ -9,5 +9,7 @@ class DCFundingCreateActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityDcFundingCreateBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
