@@ -1,4 +1,4 @@
-package com.gdg.donation
+package com.gdg.donation.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,16 +10,16 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.gdg.donation.R
 
 class RealLoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_real_login, container, false)
 
-        // Initialize views
         val buttonLogin = view.findViewById<Button>(R.id.buttonLogin)
         val buttonGoogleSignIn = view.findViewById<AppCompatImageButton>(R.id.buttonGoogleSignIn)
         val buttonKakaoSignIn = view.findViewById<AppCompatImageButton>(R.id.buttonKakaoSignIn)
@@ -27,22 +27,18 @@ class RealLoginFragment : Fragment() {
         val textViewFindPassword = view.findViewById<TextView>(R.id.textViewFindPassword)
         val textViewSignUp = view.findViewById<TextView>(R.id.textViewSignUp)
 
-        // Set click listener for login button
         buttonLogin.setOnClickListener {
             Toast.makeText(activity, "로그인 클릭됨", Toast.LENGTH_SHORT).show()
         }
 
-        // Set click listener for Google sign-in button
         buttonGoogleSignIn.setOnClickListener {
             Toast.makeText(activity, "Google로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
         }
 
-        // Set click listener for Kakao sign-in button
         buttonKakaoSignIn.setOnClickListener {
             Toast.makeText(activity, "카카오로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
         }
 
-        // Set click listener for find ID button
         textViewFindId.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_container, FindIdFragment())
@@ -50,7 +46,6 @@ class RealLoginFragment : Fragment() {
             }
         }
 
-        // Set click listener for find Password button
         textViewFindPassword.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_container, FindPasswordFragment())
@@ -58,7 +53,6 @@ class RealLoginFragment : Fragment() {
             }
         }
 
-        // Set click listener for Sign Up button
         textViewSignUp.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_container, SignUpFragment())
