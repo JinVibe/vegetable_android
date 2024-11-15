@@ -25,12 +25,17 @@ class DCFundingDonationActivity : AppCompatActivity() {
         // 기부 가능 농산품 리스트
         binding.donationProductList.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductDonationAdapter(dummyProductDonationList)
+            adapter = ProductDonationAdapter(dummyProductDonationList, supportFragmentManager)
         }
 
-        binding.donationButton.setOnClickListener {
-            val bottomSheet = DonationBottomSheetFragment()
-            bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+//        binding.donationButton.setOnClickListener {
+//            val bottomSheet = DonationBottomSheetFragment()
+//            bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+//        }
+
+        // 뒤로가기
+        binding.backButton.setOnClickListener {
+            finish()
         }
     }
 

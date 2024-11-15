@@ -22,7 +22,7 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="14.5dp"
-                android:src="@drawable/app_name"
+                android:src="@drawable/app"
                 app:layout_constraintStart_toStartOf="@id/app_bar"
                 app:layout_constraintTop_toTopOf="@id/app_bar" />
 
@@ -72,11 +72,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/funding_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="20dp"
-            tools:listitem="@layout/item_dc_funding"
             android:nestedScrollingEnabled="false"
             />
 
@@ -96,12 +95,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/product_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="550dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="38dp"
-            tools:listitem="@layout/item_product_donation"
             android:nestedScrollingEnabled="false"
             />
     </LinearLayout>

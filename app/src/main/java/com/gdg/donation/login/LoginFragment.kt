@@ -34,12 +34,18 @@ class LoginFragment : Fragment() {
 
         // 구글 로그인 API
         buttonGoogleSignIn.setOnClickListener {
-            Toast.makeText(activity, "Google로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.commit {
+                replace(R.id.fragment_container, RealLoginFragment())
+                addToBackStack(null)
+            }
         }
 
         // 카카오 로그인 API
         buttonKakaoSignIn.setOnClickListener {
-            Toast.makeText(activity, "카카오로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.commit {
+                replace(R.id.fragment_container, RealLoginFragment())
+                addToBackStack(null)
+            }
         }
 
         // 기본 로그인

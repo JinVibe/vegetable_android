@@ -1,16 +1,22 @@
 package com.gdg.donation.donationcenter
 
+import android.icu.text.DecimalFormat
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gdg.donation.R
 import com.gdg.donation.databinding.ItemProductDonationBinding
 import com.gdg.donation.donationcenter.data.ProductDonation
 
-class ProductDonationAdapter(private val productDonationList: List<ProductDonation>) : RecyclerView.Adapter<ProductDonationAdapter.ProductDonationHolder>() {
+class ProductDonationAdapter(private val productDonationList: List<ProductDonation>
+,private val fragmentManager: FragmentManager) : RecyclerView.Adapter<ProductDonationAdapter.ProductDonationHolder>() {
 
     inner class ProductDonationHolder(private val binding: ItemProductDonationBinding) : RecyclerView.ViewHolder(binding.root) {
+        @RequiresApi(Build.VERSION_CODES.N)
         fun bind(productDonation: ProductDonation) {
             if (productDonation.image.isNullOrBlank()) {
                 binding.image.setImageResource(R.drawable.dummy_image_2)
@@ -21,7 +27,13 @@ class ProductDonationAdapter(private val productDonationList: List<ProductDonati
             }
             binding.title.text = productDonation.title
             binding.writer.text = productDonation.writer
-            binding.price.text = productDonation.price.toString()
+            binding.price.text = DecimalFormat("#,###").format(productDonation.price).toString() + "원"
+
+
+            binding.root.setOnClickListener {
+                val bottomSheet = DonationBottomSheetFragment(productDonation)
+                bottomSheet.show(fragmentManager, bottomSheet.tag)
+            }
         }
     }
 

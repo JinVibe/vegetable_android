@@ -36,6 +36,11 @@ class DCFundingDetailActivity : AppCompatActivity() {
         binding.donationButton.setOnClickListener {
             startActivity(Intent(this, DCFundingDonationActivity::class.java))
         }
+
+        // 뒤로가기
+        binding.backButton.setOnClickListener {
+            finish()
+        }
     }
 
 

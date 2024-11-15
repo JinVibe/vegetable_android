@@ -36,7 +36,7 @@ class MainFragment : Fragment() {
 
         binding.productList.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductDonationAdapter(dummyProductDonationList)
+            adapter = ProductDonationAdapter(dummyProductDonationList, requireActivity().supportFragmentManager)
         }
     }
 }

@@ -41,11 +41,15 @@ class RealLoginFragment : Fragment() {
         }
 
         buttonGoogleSignIn.setOnClickListener {
-            Toast.makeText(activity, "Google로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.commit {
+                moveToMainScreen()
+            }
         }
 
         buttonKakaoSignIn.setOnClickListener {
-            Toast.makeText(activity, "카카오로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.commit {
+                moveToMainScreen()
+            }
         }
 
         textViewFindId.setOnClickListener {
