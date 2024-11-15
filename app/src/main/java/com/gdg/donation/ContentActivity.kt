@@ -16,6 +16,7 @@ class ContentActivity : AppCompatActivity() {
     private val donationCenterFragment = DonationCenterFragment() // 기부처 프래그먼트
     private val myPageFragment = MyPageFragment() // 마이페이지 프래그먼트
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityContentBinding.inflate(layoutInflater)

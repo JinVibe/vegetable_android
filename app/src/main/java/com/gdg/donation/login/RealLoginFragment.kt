@@ -1,5 +1,6 @@
 package com.gdg.donation.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,12 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.gdg.donation.ContentActivity
+import com.gdg.donation.FindIdFragment
+import com.gdg.donation.FindPasswordFragment
+import com.gdg.donation.HomeFragment
 import com.gdg.donation.R
+import com.gdg.donation.SignUpFragment
 
 class RealLoginFragment : Fragment() {
     override fun onCreateView(
@@ -67,9 +73,7 @@ class RealLoginFragment : Fragment() {
     }
 
     private fun moveToMainScreen() {
-        parentFragmentManager.commit {
-            replace(R.id.fragment_container, HomeFragment())
-            addToBackStack(null)
-        }
+        startActivity(Intent(context, ContentActivity::class.java))
+        requireActivity().finish()
     }
 }
