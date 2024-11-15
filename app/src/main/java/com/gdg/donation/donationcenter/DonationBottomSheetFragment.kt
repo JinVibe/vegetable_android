@@ -21,5 +21,5 @@ class DonationBottomSheetFragment : BottomSheetDialogFragment() {
         view.setBackgroundResource(R.drawable.bottom_sheet_background)
         return view
     }
-    
+
 }
