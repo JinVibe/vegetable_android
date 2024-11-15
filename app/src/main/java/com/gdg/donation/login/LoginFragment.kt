@@ -9,8 +9,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import com.gdg.donation.R
 import com.gdg.donation.login.RealLoginFragment
+
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
@@ -53,9 +53,3 @@ class LoginFragment : Fragment() {
         return view
     }
 }
-
-
-
-
-
-
