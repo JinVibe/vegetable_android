@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="20dp"
-        android:text="안녕하세요,\nROWN에 처음 방문하셨나요?"
+        android:text="안녕하세요,\nGROWN에 처음 방문하셨나요?"
         android:textAlignment="textStart"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:text="이미 ROWN 계정이 있다면 로그인"
+        android:text="이미 GROWN 계정이 있다면 로그인"
         android:textColor="#15C444"
         app:layout_constraintStart_toStartOf="@id/buttonKakaoSignIn"
         app:layout_constraintEnd_toEndOf="@id/buttonKakaoSignIn"
