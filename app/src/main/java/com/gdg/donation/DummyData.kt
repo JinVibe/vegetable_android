@@ -102,63 +102,44 @@ val dummyProductNeedList = listOf(
 val dummyProductDonationList: List<ProductDonation> = listOf(
     ProductDonation(
         image = "",
-        title = "Winter Coat Donation",
-        writer = "Warm Hearts Foundation",
-        price = 50
+        title = "감자 기부",
+        writer = "농부의 손길",
+        price = 1000
     ),
     ProductDonation(
         image = "",
-        title = "School Supplies Drive",
-        writer = "Education for All",
-        price = 30
+        title = "당근 기부",
+        writer = "농부의 손길",
+        price = 800
     ),
     ProductDonation(
         image = "",
-        title = "Food Bank Support",
-        writer = "Community Food Bank",
-        price = 20
+        title = "양파 기부",
+        writer = "농부의 손길",
+        price = 600
     ),
     ProductDonation(
         image = "",
-        title = "Medical Aid Fund",
-        writer = "Health First",
-        price = 100
+        title = "배추 기부",
+        writer = "농부의 손길",
+        price = 1200
     ),
     ProductDonation(
         image = "",
-        title = "Animal Shelter Supplies",
-        writer = "Pets Care",
-        price = 25
+        title = "무 기부",
+        writer = "농부의 손길",
+        price = 700
     ),
     ProductDonation(
         image = "",
-        title = "Animal Shelter Supplies",
-        writer = "Pets Care",
-        price = 25
-    ),ProductDonation(
+        title = "토마토 기부",
+        writer = "농부의 손길",
+        price = 1500
+    ),
+    ProductDonation(
         image = "",
-        title = "Animal Shelter Supplies",
-        writer = "Pets Care",
-        price = 25
-    ),ProductDonation(
-        image = "",
-        title = "Animal Shelter Supplies",
-        writer = "Pets Care",
-        price = 25
-    ),ProductDonation(
-        image = "",
-        title = "Animal Shelter Supplies",
-        writer = "Pets Care",
-        price = 25
-    ),ProductDonation(
-        image = "",
-        title = "Animal Shelter Supplies",
-        writer = "Pets Care",
-        price = 25
-    ),ProductDonation(
-        image = "",
-        title = "Animal Shelter Supplies",
-        writer = "Pets Care",
-        price = 25
+        title = "오이 기부",
+        writer = "농부의 손길",
+        price = 900
     )
 )

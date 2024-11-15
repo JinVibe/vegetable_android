@@ -34,10 +34,10 @@ class ContentActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container, mainFragment).commit()
                     true
                 }
-                R.id.farm_products_nav -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, farmProductsFragment).commit()
-                    true
-                }
+//                R.id.farm_products_nav -> {
+//                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, farmProductsFragment).commit()
+//                    true
+//                }
                 R.id.donation_center_nav -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container, donationCenterFragment).commit()
                     true

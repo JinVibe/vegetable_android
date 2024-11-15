@@ -89,7 +89,7 @@ class DCFundingDetailActivity : AppCompatActivity() {
     }
 
 
-    private inner class ProductNeedAdapter(private val productNeedList: List<ProductNeed>) : RecyclerView.Adapter<ProductNeedHolder>() {
+    inner class ProductNeedAdapter(private val productNeedList: List<ProductNeed>) : RecyclerView.Adapter<ProductNeedHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductNeedHolder {
             val binding = ItemProductNeedBinding.inflate(layoutInflater, parent, false)
             return ProductNeedHolder(binding)

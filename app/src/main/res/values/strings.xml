@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ROWN</string>
-    <string name="app_name">My Application</string>
 
     <!-- 야채들 -->
     <string-array name="vegetable_items">

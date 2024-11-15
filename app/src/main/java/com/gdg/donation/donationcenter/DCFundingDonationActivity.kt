@@ -34,35 +34,35 @@ class DCFundingDonationActivity : AppCompatActivity() {
         }
     }
 
-    private inner class ProductDonationHolder(private val binding : ItemProductDonationBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(productDonation : ProductDonation) {
-            if (productDonation.image.isNullOrBlank()) { // 이미지
-                binding.image.setImageResource(R.drawable.test)
-            } else {
-                Glide.with(binding.image.context)
-                    .load(productDonation.image)
-                    .into(binding.image)
-            }
-            binding.title.text = productDonation.title // 제목
-            binding.writer.text = productDonation.writer // 작성자
-            binding.price.text = productDonation.price.toString() // kg당 가격
-        }
-    }
-
-    private inner class ProductDonationAdapter(private val productDonationList : List<ProductDonation>) : RecyclerView.Adapter<ProductDonationHolder>()  {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductDonationHolder {
-            val binding = ItemProductDonationBinding.inflate(layoutInflater, parent, false)
-
-            return ProductDonationHolder(binding)
-        }
-
-        override fun getItemCount(): Int {
-            return productDonationList.size
-        }
-
-        override fun onBindViewHolder(holder: ProductDonationHolder, position: Int) {
-            holder.bind(productDonationList[position])
-        }
-
-    }
+//    inner class ProductDonationHolder(private val binding : ItemProductDonationBinding) : RecyclerView.ViewHolder(binding.root) {
+//        fun bind(productDonation : ProductDonation) {
+//            if (productDonation.image.isNullOrBlank()) { // 이미지
+//                binding.image.setImageResource(R.drawable.test)
+//            } else {
+//                Glide.with(binding.image.context)
+//                    .load(productDonation.image)
+//                    .into(binding.image)
+//            }
+//            binding.title.text = productDonation.title // 제목
+//            binding.writer.text = productDonation.writer // 작성자
+//            binding.price.text = productDonation.price.toString() // kg당 가격
+//        }
+//    }
+//
+//    inner class ProductDonationAdapter(private val productDonationList : List<ProductDonation>) : RecyclerView.Adapter<ProductDonationHolder>()  {
+//        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductDonationHolder {
+//            val binding = ItemProductDonationBinding.inflate(layoutInflater, parent, false)
+//
+//            return ProductDonationHolder(binding)
+//        }
+//
+//        override fun getItemCount(): Int {
+//            return productDonationList.size
+//        }
+//
+//        override fun onBindViewHolder(holder: ProductDonationHolder, position: Int) {
+//            holder.bind(productDonationList[position])
+//        }
+//
+//    }
 }
