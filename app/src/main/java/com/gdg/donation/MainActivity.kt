@@ -11,7 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Add LoginFragment to the activity
+        // if 로그인
+        // ....
+        // else
+        // 일단은 메인 화면 구현 전이라 로그인으로 시작
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, LoginFragment())
             .commit()

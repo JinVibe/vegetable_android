@@ -28,7 +28,10 @@ class RealLoginFragment : Fragment() {
         val textViewSignUp = view.findViewById<TextView>(R.id.textViewSignUp)
 
         buttonLogin.setOnClickListener {
-            Toast.makeText(activity, "로그인 클릭됨", Toast.LENGTH_SHORT).show()
+
+            parentFragmentManager.commit {
+                moveToMainScreen()
+            }
         }
 
         buttonGoogleSignIn.setOnClickListener {
@@ -61,5 +64,12 @@ class RealLoginFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun moveToMainScreen() {
+        parentFragmentManager.commit {
+            replace(R.id.fragment_container, HomeFragment())
+            addToBackStack(null)
+        }
     }
 }

@@ -1,6 +1,5 @@
-package com.gdg.donation.login
+package com.gdg.donation
 
-// LoginFragment.kt
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.gdg.donation.R
+import com.gdg.donation.login.RealLoginFragment
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
@@ -32,12 +32,12 @@ class LoginFragment : Fragment() {
             }
         }
 
-        // 구글 로그인 버튼
+        // 구글 로그인 API
         buttonGoogleSignIn.setOnClickListener {
             Toast.makeText(activity, "Google로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
         }
 
-        // 카카오 로그인 버튼
+        // 카카오 로그인 API
         buttonKakaoSignIn.setOnClickListener {
             Toast.makeText(activity, "카카오로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
         }
