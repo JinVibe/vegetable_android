@@ -177,7 +177,7 @@
         />
 
     <Button
-        android:id="@+id/donation_button"
+        android:id="@+id/complete_button"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginBottom="30dp"
