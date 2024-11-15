@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <ImageView
+            android:id="@+id/back_button"
+            app:layout_constraintStart_toStartOf="@id/app_bar"
+            app:layout_constraintTop_toTopOf="@id/app_bar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/back_button" />
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기부 옵션"
+            android:textColor="#0F0F10"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="김씨농가 못난이 감자"
+            android:textColor="#111111"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/writer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="김씨농가"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#111111"
+            android:textStyle="bold"
+            android:text="1,400 원"
+            app:layout_constraintStart_toStartOf="@id/writer"
+            app:layout_constraintTop_toBottomOf="@id/writer"
+            android:layout_marginTop="4dp"
+            />
+        
+        
+        <LinearLayout
+            android:id="@+id/count_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/price"
+            app:layout_constraintTop_toBottomOf="@id/price"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_background_6"
+            android:paddingStart="10dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingEnd="10dp">
+
+            <ImageView
+                android:id="@+id/minus_button"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/minus_button"
+                />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16sp"
+                android:text="1"
+                android:textColor="#111111"
+                android:layout_marginStart="16.5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16sp"
+                android:text="kg"
+                android:textColor="#656569"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="16.5dp"/>
+
+            <ImageView
+                android:id="@+id/plus_button"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/plus_button"
+                />
+
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2,800원"
+            android:textColor="#15C444"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/count_box"
+            app:layout_constraintBottom_toBottomOf="@id/count_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#C5C6CB"
+        android:layout_marginTop="36dp"
+        />
+
+    <Button
+        android:id="@+id/donation_button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="24dp"
+        android:text="기부하기"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#15C444"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
