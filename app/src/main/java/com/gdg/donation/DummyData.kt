@@ -1,7 +1,8 @@
 package com.gdg.donation
 
 import com.gdg.donation.donationcenter.data.DCFunding
-import com.gdg.donation.donationcenter.data.Product
+import com.gdg.donation.donationcenter.data.ProductDonation
+import com.gdg.donation.donationcenter.data.ProductNeed
 
 val dummyDCFundingList : List<DCFunding> = listOf(
     DCFunding(
@@ -77,23 +78,87 @@ val dummyImageUrlList = listOf(
     "",
 )
 
-val dummyProductList = listOf(
-    Product(
+val dummyProductNeedList = listOf(
+    ProductNeed(
         image = "",
         targetAmount = 10,
         collectedAmount = 7,
         name = "Potato"
     ),
-    Product(
+    ProductNeed(
         image = "",
         targetAmount = 15,
         collectedAmount = 10,
         name = "Carrot"
     ),
-    Product(
+    ProductNeed(
         image = "",
         targetAmount = 20,
         collectedAmount = 5,
         name = "Onion"
+    )
+)
+
+val dummyProductDonationList: List<ProductDonation> = listOf(
+    ProductDonation(
+        image = "",
+        title = "Winter Coat Donation",
+        writer = "Warm Hearts Foundation",
+        price = 50
+    ),
+    ProductDonation(
+        image = "",
+        title = "School Supplies Drive",
+        writer = "Education for All",
+        price = 30
+    ),
+    ProductDonation(
+        image = "",
+        title = "Food Bank Support",
+        writer = "Community Food Bank",
+        price = 20
+    ),
+    ProductDonation(
+        image = "",
+        title = "Medical Aid Fund",
+        writer = "Health First",
+        price = 100
+    ),
+    ProductDonation(
+        image = "",
+        title = "Animal Shelter Supplies",
+        writer = "Pets Care",
+        price = 25
+    ),
+    ProductDonation(
+        image = "",
+        title = "Animal Shelter Supplies",
+        writer = "Pets Care",
+        price = 25
+    ),ProductDonation(
+        image = "",
+        title = "Animal Shelter Supplies",
+        writer = "Pets Care",
+        price = 25
+    ),ProductDonation(
+        image = "",
+        title = "Animal Shelter Supplies",
+        writer = "Pets Care",
+        price = 25
+    ),ProductDonation(
+        image = "",
+        title = "Animal Shelter Supplies",
+        writer = "Pets Care",
+        price = 25
+    ),ProductDonation(
+        image = "",
+        title = "Animal Shelter Supplies",
+        writer = "Pets Care",
+        price = 25
+    ),ProductDonation(
+        image = "",
+        title = "Animal Shelter Supplies",
+        writer = "Pets Care",
+        price = 25
     )
 )

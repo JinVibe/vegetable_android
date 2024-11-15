@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기부 완료"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="17dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/close_button"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/close_button"/>
+    
+    <ImageView
+        android:id="@+id/complete_img"
+        android:layout_width="182dp"
+        android:layout_height="148dp"
+        android:src="@drawable/complete_img"
+        app:layout_constraintTop_toBottomOf="@id/page_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="61dp"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/complete_msg_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기부가 완료되었습니다!"
+        android:textColor="#15C444"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/page_title"
+        app:layout_constraintStart_toStartOf="@+id/page_title"
+        app:layout_constraintTop_toBottomOf="@+id/complete_img"
+        android:layout_marginTop="43dp"/>
+
+    <TextView
+        android:id="@+id/complete_msg_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="아래와 같이 기부가 완료되었습니다.
+        소중한 나눔을 실천해주셔서 감사합니다."
+        android:textColor="#94959C"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/complete_msg_1"
+        app:layout_constraintStart_toStartOf="@+id/complete_msg_1"
+        app:layout_constraintTop_toBottomOf="@+id/complete_msg_1"
+        android:layout_marginTop="8dp"
+        android:gravity="center"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8E8EE"
+        app:layout_constraintStart_toStartOf="@id/complete_msg_2"
+        app:layout_constraintEnd_toEndOf="@id/complete_msg_2"
+        app:layout_constraintTop_toBottomOf="@id/complete_msg_2"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25.5dp"
+        android:text="기부처"
+        android:textColor="#828387"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/line"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <TextView
+        android:id="@+id/donation_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="그린아동센터"
+        android:textColor="#111111"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/txt_1"
+        app:layout_constraintBottom_toBottomOf="@id/txt_1"
+        app:layout_constraintEnd_toEndOf="@id/line"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="구매처"
+        android:textColor="#828387"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/txt_1"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/farm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="김씨농가, 당근농원"
+        android:textColor="#111111"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/txt_2"
+        app:layout_constraintBottom_toBottomOf="@id/txt_2"
+        app:layout_constraintEnd_toEndOf="@id/donation_center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="기부금액"
+        android:textColor="#828387"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/txt_2"
+        app:layout_constraintTop_toBottomOf="@id/txt_2" />
+
+    <TextView
+        android:id="@+id/sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6,800원"
+        android:textColor="#111111"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/txt_3"
+        app:layout_constraintBottom_toBottomOf="@id/txt_3"
+        app:layout_constraintEnd_toEndOf="@id/farm"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="기여도"
+        android:textColor="#828387"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/txt_3"
+        app:layout_constraintTop_toBottomOf="@id/txt_3" />
+
+    <TextView
+        android:id="@+id/contribution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.5%"
+        android:textColor="#111111"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/txt_4"
+        app:layout_constraintBottom_toBottomOf="@id/txt_4"
+        app:layout_constraintEnd_toEndOf="@id/sum"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/complete_button"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="30dp"
+        android:text="확인"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#15C444"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
