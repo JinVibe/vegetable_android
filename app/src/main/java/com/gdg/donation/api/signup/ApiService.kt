@@ -10,63 +10,63 @@ import retrofit2.http.*
 // 회원가입 API 인터페이스
 interface ApiService {
     // 비밀번호 변경
-    @PUT("http://192.168.10.123:8080/api/v1/member/change/password")
+    @PUT("api/member/change/password")
     fun resetPassword(@Body request: ResetPasswordReqDTO): Call<Void>
 
     // 회원가입 - 성공
-    @POST("api/v1/member/new")
+    @POST("api/member/new")
     fun signUp(@Body request: SignUpReqDTO): Call<Void>
 
     // 로그인 - 성공
-    @POST("api/v1/member/login")
+    @POST("api/member/login")
     fun logIn(
         @Body request: LogInReqDTO
     ): Call<LogInResDTO>
 
 //    // 마이 페이지 열람
-//    @GET("http://192.168.10.123:8080/api/v1/member/info")
+//    @GET("api/member/info")
 //    fun
 
     // 아이디(이메일) 찾기
-    @GET("api/v1/member/find/id")
+    @GET("api/member/find/id")
     fun findIdResult(
         @Body parameters: findIdResultReqDTO
     ): Call<findIdResultResDTO>
 
     // 이메일 중복 확인 - 백에서 처리
-    @GET("api/v1/member/email/{email}")
+    @GET("api/member/email/{email}")
     fun checkEmailDuplicate(
         @Path("email") email: String
     ): Call<Boolean>
 
 //    // product-controller
-//    @POST("http://192.168.10.123:8080/api/product/create")
+//    @POST("api/product/create")
 //    fun
 
-//    @GET("http://192.168.10.123:8080/api/product")
+//    @GET("api/product")
 //
-//    @GET("http://192.168.10.123:808ㅁㄴ0/api/product/{productId}")
+//    @GET("api/product/{productId}")
 //
-//    @GET("http://192.168.10.123:8080/api/product/search")
+//    @GET("api/product/search")
 //
-//    @GET("http://192.168.10.123:8080/api/product/cheapest")
+//    @GET("api/product/cheapest")
 //
 //    // order-funding-controller
-//    @POST("http://192.168.10.123:8080/api/orderFunding/create"
+//    @POST("api/orderFunding/create"
 //
 //
-//    @GET("http://192.168.10.123:8080/api/orderFunding/{memberId}")
+//    @GET("api/orderFunding/{memberId}")
 //
 //    // funding-controller
-//    @POST("http://192.168.10.123:8080/api/funding/create")
+//    @POST("api/funding/create")
 //
-//    @GET("http://192.168.10.123:8080/api/funding")
+//    @GET("api/funding")
 //
-//    @GET("http://192.168.10.123:8080/api/funding/{fundingId}")
+//    @GET("api/funding/{fundingId}")
 //
-//    @GET("http://192.168.10.123:8080/api/funding/search")
+//    @GET("api/funding/search")
 //
-//    @GET("http://192.168.10.123:8080/api/funding/deadline")
+//    @GET("api/funding/deadline")
 
 
 }
