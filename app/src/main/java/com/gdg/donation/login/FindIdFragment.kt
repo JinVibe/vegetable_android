@@ -16,14 +16,13 @@ class FindIdFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_find_id, container, false)
 
-        // Initialize views
+
         val buttonFindId = view.findViewById<Button>(R.id.buttonFindId)
         val buttonBack = view.findViewById<Button>(R.id.buttonBack)
 
-        // Set click listener for find ID button
         buttonFindId.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_container, FindIdResultFragment())

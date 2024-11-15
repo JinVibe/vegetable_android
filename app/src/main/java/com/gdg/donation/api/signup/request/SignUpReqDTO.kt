@@ -1,6 +1,6 @@
-package com.gdg.donation.api
+package com.gdg.donation.api.signup.request
 
-data class MemberReqDTO(
+data class SignUpReqDTO(
     val name: String,
     val email: String,
     val password: String,

@@ -22,7 +22,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextId"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTitle"
@@ -34,7 +34,7 @@
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextId"
+        android:layout_below="@id/editTextEmail"
         android:layout_marginTop="16dp"
         android:hint="비밀번호"
         android:inputType="textPassword" />

@@ -1,6 +1,5 @@
 package com.gdg.donation.login
 
-// FindIdResultFragment.kt
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,13 +14,11 @@ class FindIdResultFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_find_id_result, container, false)
 
-        // Initialize views
         val buttonLogin = view.findViewById<Button>(R.id.buttonLogin)
 
-        // Set click listener for login button
         buttonLogin.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_container, RealLoginFragment())

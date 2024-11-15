@@ -6,19 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import com.gdg.donation.ContentActivity
-import com.gdg.donation.FindIdFragment
-import com.gdg.donation.FindPasswordFragment
-import com.gdg.donation.HomeFragment
-import com.gdg.donation.R
-import com.gdg.donation.SignUpFragment
+import com.gdg.donation.*
+import com.gdg.donation.api.RetrofitInstance
+import com.gdg.donation.api.signup.request.LogInReqDTO
+import com.gdg.donation.api.signup.response.LogInResDTO
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class RealLoginFragment : Fragment() {
+
+    private lateinit var editTextEmail: EditText
+    private lateinit var editTextPassword: EditText
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,10 +41,11 @@ class RealLoginFragment : Fragment() {
         val textViewSignUp = view.findViewById<TextView>(R.id.textViewSignUp)
 
         buttonLogin.setOnClickListener {
+             login()
 
-            parentFragmentManager.commit {
-                moveToMainScreen()
-            }
+//            parentFragmentManager.commit {
+//                moveToMainScreen()
+//            }
         }
 
         buttonGoogleSignIn.setOnClickListener {
@@ -70,6 +78,41 @@ class RealLoginFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // EditText 초기화
+        editTextEmail = view.findViewById(R.id.editTextEmail)
+        editTextPassword = view.findViewById(R.id.editTextPassword)
+    }
+
+    private fun login() {
+        val email = editTextEmail.text.toString()
+        val password = editTextPassword.text.toString()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(requireContext(), "이메일과 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val loginRequest = LogInReqDTO(email, password)
+
+        RetrofitInstance.api.logIn(loginRequest).enqueue(object : Callback<LogInResDTO> {
+            override fun onResponse(call: Call<LogInResDTO>, response: Response<LogInResDTO>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(requireContext(), "로그인 성공", Toast.LENGTH_SHORT).show()
+                    moveToMainScreen()
+                } else {
+                    Toast.makeText(requireContext(), "로그인 실패: 이메일이나 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<LogInResDTO>, t: Throwable) {
+                Toast.makeText(requireContext(), "네트워크 오류 발생", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun moveToMainScreen() {
