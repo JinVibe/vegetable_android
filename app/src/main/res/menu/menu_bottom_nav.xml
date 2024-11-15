@@ -6,16 +6,17 @@
         android:icon="@drawable/main_nav"
         android:title="메인"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/farm_products_nav"
-        android:icon="@drawable/farm_products_nav"
-        android:title="농산품"
-        app:showAsAction="always"/>
+
+<!--    <item-->
+<!--        android:id="@+id/farm_products_nav"-->
+<!--        android:icon="@drawable/farm_products_nav"-->
+<!--        android:title="농산품"-->
+<!--        app:showAsAction="always"/>-->
 
     <item
         android:id="@+id/donation_center_nav"
         android:icon="@drawable/donation_center_nav"
-        android:title="기부처"
+        android:title="펀딩"
         app:showAsAction="always"/>
 
 
