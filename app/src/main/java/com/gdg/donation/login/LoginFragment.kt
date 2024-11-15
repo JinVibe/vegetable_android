@@ -1,4 +1,4 @@
-package com.gdg.donation
+package com.gdg.donation.login
 
 // LoginFragment.kt
 import android.os.Bundle
@@ -10,22 +10,21 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.gdg.donation.R
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
-        // Initialize views
         val buttonCreateAccount = view.findViewById<Button>(R.id.buttonCreateAccount)
         val buttonGoogleSignIn = view.findViewById<Button>(R.id.buttonGoogleSignIn)
         val buttonKakaoSignIn = view.findViewById<Button>(R.id.buttonKakaoSignIn)
         val textViewLogin = view.findViewById<TextView>(R.id.textViewLogin)
 
-        // Set click listener for create account button
         buttonCreateAccount.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_container, SignUpFragment())
@@ -33,17 +32,17 @@ class LoginFragment : Fragment() {
             }
         }
 
-        // Set click listener for Google sign-in button
+        // 구글 로그인 버튼
         buttonGoogleSignIn.setOnClickListener {
             Toast.makeText(activity, "Google로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
         }
 
-        // Set click listener for Kakao sign-in button
+        // 카카오 로그인 버튼
         buttonKakaoSignIn.setOnClickListener {
             Toast.makeText(activity, "카카오로 시작하기 클릭됨", Toast.LENGTH_SHORT).show()
         }
 
-        // Set click listener for login text
+        // 기본 로그인
         textViewLogin.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_container, RealLoginFragment())

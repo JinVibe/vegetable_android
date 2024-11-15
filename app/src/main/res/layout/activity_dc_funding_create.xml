@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -31,9 +31,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="101dp"
                 android:text="펀딩 작성하기"
-                android:textStyle="bold"
                 android:textColor="#0F0F10"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/back_button"
                 app:layout_constraintStart_toEndOf="@id/back_button"
                 app:layout_constraintTop_toTopOf="@id/back_button" />
@@ -168,6 +168,127 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp">
 
+
+            <!-- 첫 번째 줄 (감자 - 10 - kg) -->
+            <LinearLayout
+                android:id="@+id/first_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner_item1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/green"
+                    android:entries="@array/vegetable_items"
+                    android:textColor="@color/green" />
+
+                <EditText
+                    android:id="@+id/editText_item1_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray_light"
+                    android:gravity="center"
+                    android:hint="10"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:id="@+id/spinner_item1_unit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray_light"
+                    android:entries="@array/units" />
+            </LinearLayout>
+
+            <!-- 두 번째 줄 (당근 - 8 - kg) -->
+            <LinearLayout
+                android:id="@+id/second_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_layout"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner_item2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/green"
+                    android:entries="@array/vegetable_items"
+                    android:textColor="@color/green" />
+
+                <EditText
+                    android:id="@+id/editText_item2_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray_light"
+                    android:gravity="center"
+                    android:hint="8"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:id="@+id/spinner_item2_unit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray_light"
+                    android:entries="@array/units" />
+            </LinearLayout>
+
+            <!-- 세 번째 줄 (농산품명, 양, 단위 선택) -->
+            <LinearLayout
+                android:id="@+id/third_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/second_layout"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editText_item3_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray_light"
+                    android:gravity="center"
+                    android:hint="농산품명" />
+
+                <EditText
+                    android:id="@+id/editText_item3_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray_light"
+                    android:gravity="center"
+                    android:hint="양(숫자만)"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:id="@+id/spinner_item3_unit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray_light"
+                    android:entries="@array/units" />
+            </LinearLayout>
+
+            <!-- 추가하기 버튼 -->
+            <Button
+                android:id="@+id/button_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/third_layout"
+                android:backgroundTint="@color/gray_light"
+                android:text="추가하기"
+                android:textColor="@android:color/black" />
         </RelativeLayout>
 
 
@@ -204,13 +325,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#15C444"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:backgroundTint="#15C444"
-            android:text="게시하기"
-            android:layout_marginBottom="30dp"
-            />
-
+            android:text="게시하기" />
 
     </LinearLayout>
 </ScrollView>
