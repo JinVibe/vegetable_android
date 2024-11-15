@@ -43,7 +43,7 @@ class DCFundingDetailActivity : AppCompatActivity() {
     private inner class ImagePagerHolder(private val binding : ItemImagePagerBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(imageUrl : String) {
             if (imageUrl.isNullOrBlank()) { // 이미지
-                binding.image.setImageResource(R.drawable.test)
+                binding.image.setImageResource(R.drawable.dummy_image_1)
             } else {
                 Glide.with(binding.image.context).load(imageUrl).into(binding.image)
             }
@@ -74,7 +74,7 @@ class DCFundingDetailActivity : AppCompatActivity() {
             val progressPercentage = (productNeed.collectedAmount.toFloat() / productNeed.targetAmount * 100).toInt() // 프로그래스 계산
 
             if (productNeed.image.isNullOrBlank()) { // 이미지
-                binding.image.setImageResource(R.drawable.test)
+                binding.image.setImageResource(R.drawable.dummy_image_2)
             } else {
                 Glide.with(binding.image.context)
                     .load(productNeed.image)

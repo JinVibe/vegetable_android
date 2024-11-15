@@ -13,7 +13,7 @@ class ProductDonationAdapter(private val productDonationList: List<ProductDonati
     inner class ProductDonationHolder(private val binding: ItemProductDonationBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(productDonation: ProductDonation) {
             if (productDonation.image.isNullOrBlank()) {
-                binding.image.setImageResource(R.drawable.test)
+                binding.image.setImageResource(R.drawable.dummy_image_2)
             } else {
                 Glide.with(binding.image.context)
                     .load(productDonation.image)

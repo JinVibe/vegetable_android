@@ -17,7 +17,7 @@ class DCFundingAdapter(private val dcFundingList: List<DCFunding>) : RecyclerVie
             val progressPercentage = (dcFunding.collectedAmount.toFloat() / dcFunding.targetAmount * 100).toInt()
 
             if (dcFunding.image.isNullOrBlank()) {
-                binding.image.setImageResource(R.drawable.test)
+                binding.image.setImageResource(R.drawable.dummy_image_1)
             } else {
                 Glide.with(binding.root.context)
                     .load(dcFunding.image)
