@@ -17,5 +17,6 @@ class MainActivity : AppCompatActivity() {
 
         // 메인 액티비티(로그인, 회원가입) -> 컨텐드 액티비티 (홈, 기부처, 농산품, 마이페이지) TODO 임시 설정, 추후 리팩토링
         startActivity(Intent(this, ContentActivity::class.java))
+        finish() // 메인 액티비티 종료
     }
 }

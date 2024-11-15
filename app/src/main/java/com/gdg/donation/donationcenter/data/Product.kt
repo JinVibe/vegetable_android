@@ -1,4 +1,4 @@
-package com.gdg.donation.donationcenter
+package com.gdg.donation.donationcenter.data
 
 data class Product(
     val image : String? = null,

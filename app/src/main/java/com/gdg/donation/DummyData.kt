@@ -1,7 +1,7 @@
 package com.gdg.donation
 
-import com.gdg.donation.donationcenter.DCFunding
-import com.gdg.donation.donationcenter.Product
+import com.gdg.donation.donationcenter.data.DCFunding
+import com.gdg.donation.donationcenter.data.Product
 
 val dummyDCFundingList : List<DCFunding> = listOf(
     DCFunding(

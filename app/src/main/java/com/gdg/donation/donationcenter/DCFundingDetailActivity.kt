@@ -3,7 +3,6 @@ package com.gdg.donation.donationcenter
 import android.os.Bundle
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -11,6 +10,7 @@ import com.gdg.donation.R
 import com.gdg.donation.databinding.ActivityDcFundingDetailBinding
 import com.gdg.donation.databinding.ItemImagePagerBinding
 import com.gdg.donation.databinding.ItemProductBinding
+import com.gdg.donation.donationcenter.data.Product
 import com.gdg.donation.dummyImageUrlList
 import com.gdg.donation.dummyProductList
 
@@ -22,7 +22,10 @@ class DCFundingDetailActivity : AppCompatActivity() {
         binding = ActivityDcFundingDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 이미지 뷰페이저
         binding.imagePager.adapter = ImagePagerAdapter(dummyImageUrlList) // TODO 실제 list
+        
+        // 필요 농산물 리사이클러뷰
         binding.productsList.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = ProductAdapter(dummyProductList)
